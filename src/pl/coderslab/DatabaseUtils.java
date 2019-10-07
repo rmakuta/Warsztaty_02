@@ -3,7 +3,6 @@ package pl.coderslab;
 import java.sql.*;
 
 public class DatabaseUtils {
-
     public static Connection getConnection(String database) throws SQLException {
         return DriverManager.getConnection(
                 String.format("jdbc:mysql://localhost:3306/%s?" +

@@ -4,16 +4,16 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class User {
     private int id;
-    private String userName;
+    private String name;
     private String email;
     private String password;
-    private String groupId;
+    private int groupId;
 
     public User() {
     }
 
-    public User(String userName, String email, String password, String groupId) {
-        this.userName = userName;
+    public User(String name, String email, String password, int groupId) {
+        this.name = name;
         this.email = email;
         this.hashPassword(password);
         this.groupId = groupId;
@@ -27,12 +27,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -51,11 +51,11 @@ public class User {
         this.hashPassword(password);
     }
 
-    public String getGroupId() {
+    public int getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(String groupId) {
+    public void setGroupId(int groupId) {
         this.groupId = groupId;
     }
 
@@ -67,7 +67,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", groupId='" + groupId + '\'' +
