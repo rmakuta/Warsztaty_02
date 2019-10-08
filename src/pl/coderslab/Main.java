@@ -20,6 +20,10 @@ public class Main {
 
         UserDao userDao = new UserDao();
 //        userDao.create(user1);
+        User[] users = userDao.findAllByGroupId(2);
+        for (User u: users){
+            System.out.println(u);
+        }
 
         Group group = new Group("druga");
 
@@ -35,9 +39,17 @@ public class Main {
         Solution solution = new Solution();
         solution.setDescription("rozwiązanie pierwszego zadania");
         solution.setExerciseId(1);
-        solution.setUsersId(1);
+        solution.setUsersId(3);
+        solution.setCreated();
 
         SolutionDao solutionDao = new SolutionDao();
-        solutionDao.create(solution);
+//        solutionDao.create(solution);
+//        Solution[] solutions = solutionDao.findAll();
+//        Solution[] solutions = solutionDao.findAllByUserId(1);
+//        Solution[] solutions = solutionDao.findAllByExerciseId(1);
+//        for (Solution s: solutions){
+//            System.out.println(s);
+//        }
     }
+
 }

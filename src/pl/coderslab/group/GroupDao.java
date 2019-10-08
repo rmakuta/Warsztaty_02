@@ -6,16 +6,16 @@ import java.sql.*;
 import java.util.Arrays;
 
 public class GroupDao {
-    private static final String CREATE_USER_QUERY = "INSERT INTO user_group(name) VALUES (?)";
-    private static final String READ_USER_QUERY = "SELECT * FROM user_group where id = ?";
-    private static final String UPDATE_USER_QUERY = "UPDATE user_group SET name = ? where id = ?";
-    private static final String DELETE_USER_QUERY = "DELETE FROM user_group WHERE id = ?";
-    private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM user_group";
+    private static final String CREATE_GROUP_QUERY = "INSERT INTO user_group(name) VALUES (?)";
+    private static final String READ_GROUP_QUERY = "SELECT * FROM user_group where id = ?";
+    private static final String UPDATE_GROUP_QUERY = "UPDATE user_group SET name = ? where id = ?";
+    private static final String DELETE_GROUP_QUERY = "DELETE FROM user_group WHERE id = ?";
+    private static final String FIND_ALL_GROUPS_QUERY = "SELECT * FROM user_group";
 
     public Group create(Group group) {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
             PreparedStatement statement =
-                    conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
+                    conn.prepareStatement(CREATE_GROUP_QUERY, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, group.getName());
             statement.executeUpdate();
             ResultSet resultSet = statement.getGeneratedKeys();
@@ -30,7 +30,7 @@ public class GroupDao {
     }
     public Group read(int id) {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
-            PreparedStatement statement = conn.prepareStatement(READ_USER_QUERY);
+            PreparedStatement statement = conn.prepareStatement(READ_GROUP_QUERY);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
@@ -46,7 +46,7 @@ public class GroupDao {
 
     public void update(Group group) {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
-            PreparedStatement statement = conn.prepareStatement(UPDATE_USER_QUERY);
+            PreparedStatement statement = conn.prepareStatement(UPDATE_GROUP_QUERY);
             statement.setString(1, group.getName());
             statement.setInt(4, group.getId());
             statement.executeUpdate();
@@ -57,7 +57,7 @@ public class GroupDao {
 
     public void delete(int id) {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
-            PreparedStatement statement = conn.prepareStatement(DELETE_USER_QUERY);
+            PreparedStatement statement = conn.prepareStatement(DELETE_GROUP_QUERY);
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -74,7 +74,7 @@ public class GroupDao {
     public Group[] findAll() {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
             Group[] groups = new Group[0];
-            PreparedStatement statement = conn.prepareStatement(FIND_ALL_USERS_QUERY);
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_GROUPS_QUERY);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Group group = new Group();

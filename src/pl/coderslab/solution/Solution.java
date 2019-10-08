@@ -1,6 +1,7 @@
 package pl.coderslab.solution;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Solution {
     private int id;
@@ -13,9 +14,8 @@ public class Solution {
     public Solution() {
     }
 
-    public Solution(String created, String upadated, String description, int exerciseId, int usersId) {
-        this.created = created;
-        this.upadated = upadated;
+    public Solution(String description, int exerciseId, int usersId) {
+        setCreated();
         this.description = description;
         this.exerciseId = exerciseId;
         this.usersId = usersId;
@@ -33,7 +33,13 @@ public class Solution {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated() {
+        LocalDateTime createdDateTime = LocalDateTime.now();
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.created = createdDateTime.format(pattern);
+    }
+
+    public void setCreated(String created){
         this.created = created;
     }
 
@@ -41,7 +47,13 @@ public class Solution {
         return upadated;
     }
 
-    public void setUpadated(String upadated) {
+    public void setUpadated() {
+        LocalDateTime updatedDateTime = LocalDateTime.now();
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.upadated = updatedDateTime.format(pattern);
+    }
+
+    public void setUpadated(String upadated){
         this.upadated = upadated;
     }
 
