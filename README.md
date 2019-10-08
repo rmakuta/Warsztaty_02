@@ -1,1 +1,1 @@
-# JAVA_Warsztat_02
+# Warsztaty_02
