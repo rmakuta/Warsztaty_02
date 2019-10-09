@@ -58,8 +58,8 @@ public class UserDao {
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getPassword());
-            statement.setInt(4, user.getId());
-            statement.setInt(5, user.getGroupId());
+            statement.setInt(4, user.getGroupId());
+            statement.setInt(5, user.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

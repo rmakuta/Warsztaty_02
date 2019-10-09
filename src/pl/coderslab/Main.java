@@ -8,41 +8,46 @@ import pl.coderslab.solution.Solution;
 import pl.coderslab.solution.SolutionDao;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserDao;
+import pl.coderslab.user.UserMenu;
 
 public class Main {
     public static void main(String[] args) {
-        User user = new User();
-        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);
-        user.setName("Janek");
-        user.setEmail("janek@baranek.pl");
-        user.setPassword("132");
-        user.setGroupId(1);
+        UserMenu userMenu = new UserMenu();
+        userMenu.menu();
 
-        UserDao userDao = new UserDao();
+
+//        User user = new User();
+//        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);
+//        user.setName("Janek");
+//        user.setEmail("janek@baranek.pl");
+//        user.setPassword("132");
+//        user.setGroupId(1);
+
+//        UserDao userDao = new UserDao();
 //        userDao.create(user1);
-        User[] users = userDao.findAllByGroupId(2);
-        for (User u: users){
-            System.out.println(u);
-        }
+//        User[] users = userDao.findAllByGroupId(2);
+//        for (User u: users){
+//            System.out.println(u);
+//        }
 
-        Group group = new Group("druga");
+//        Group group = new Group("druga");
 
-        GroupDao groupDao = new GroupDao();
+//        GroupDao groupDao = new GroupDao();
 //        groupDao.create(group);
 
-        Exercise exercise = new Exercise();
+//        Exercise exercise = new Exercise();
 //        exercise.setTitle("czwarte");
 
-        ExerciseDao exerciseDao = new ExerciseDao();
+//        ExerciseDao exerciseDao = new ExerciseDao();
 //        exerciseDao.create(exercise);
 
-        Solution solution = new Solution();
-        solution.setDescription("rozwiązanie pierwszego zadania");
-        solution.setExerciseId(1);
-        solution.setUsersId(3);
-        solution.setCreated();
-
-        SolutionDao solutionDao = new SolutionDao();
+//        Solution solution = new Solution();
+//        solution.setDescription("rozwiązanie pierwszego zadania");
+//        solution.setExerciseId(1);
+//        solution.setUsersId(3);
+//        solution.setCreated();
+//
+//        SolutionDao solutionDao = new SolutionDao();
 //        solutionDao.create(solution);
 //        Solution[] solutions = solutionDao.findAll();
 //        Solution[] solutions = solutionDao.findAllByUserId(1);
