@@ -48,7 +48,7 @@ public class GroupDao {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_GROUP_QUERY);
             statement.setString(1, group.getName());
-            statement.setInt(4, group.getId());
+            statement.setInt(2, group.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
