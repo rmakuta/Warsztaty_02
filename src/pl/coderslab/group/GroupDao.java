@@ -28,14 +28,15 @@ public class GroupDao {
             return null;
         }
     }
-    public Group read(int id) {
+    public Group read(int groupId) {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
             PreparedStatement statement = conn.prepareStatement(READ_GROUP_QUERY);
-            statement.setInt(1, id);
+            statement.setInt(1, groupId);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 Group group = new Group();
                 group.setId(resultSet.getInt("id"));
+                group.setName(resultSet.getString("name"));
                 return group;
             }
         } catch (SQLException e) {

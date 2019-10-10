@@ -5,6 +5,7 @@ import pl.coderslab.exercise.ExerciseDao;
 import pl.coderslab.exercise.ExerciseMenu;
 import pl.coderslab.group.Group;
 import pl.coderslab.group.GroupDao;
+import pl.coderslab.group.GroupMenu;
 import pl.coderslab.solution.Solution;
 import pl.coderslab.solution.SolutionDao;
 import pl.coderslab.user.User;
@@ -16,10 +17,11 @@ public class Main {
 //        UserMenu userMenu = new UserMenu();
 //        userMenu.menu();
 
-        ExerciseMenu exerciseMenu = new ExerciseMenu();
-        exerciseMenu.menu();
+//        ExerciseMenu exerciseMenu = new ExerciseMenu();
+//        exerciseMenu.menu();
 
-
+        GroupMenu groupMenu = new GroupMenu();
+        groupMenu.menu();
 
 //        User user = new User();
 //        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);
