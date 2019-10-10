@@ -19,7 +19,7 @@ public class GroupMenu {
             System.out.println("add - dodanie grupy");
             System.out.println("edit - edycja grupy");
             System.out.println("delete - usunięcie grupy");
-            System.out.println("quit - zakończenie grupy");
+            System.out.println("quit - zakończenie programu");
 
             String option = scanner.next();
             option = option.toLowerCase();
@@ -38,7 +38,7 @@ public class GroupMenu {
         Group group = new Group();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("title: ");
+        System.out.println("name: ");
         group.setName(scanner.next());
 
         GroupDao groupDao = new GroupDao();

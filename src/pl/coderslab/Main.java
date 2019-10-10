@@ -8,6 +8,7 @@ import pl.coderslab.group.GroupDao;
 import pl.coderslab.group.GroupMenu;
 import pl.coderslab.solution.Solution;
 import pl.coderslab.solution.SolutionDao;
+import pl.coderslab.solution.SolutionMenu;
 import pl.coderslab.user.User;
 import pl.coderslab.user.UserDao;
 import pl.coderslab.user.UserMenu;
@@ -20,8 +21,11 @@ public class Main {
 //        ExerciseMenu exerciseMenu = new ExerciseMenu();
 //        exerciseMenu.menu();
 
-        GroupMenu groupMenu = new GroupMenu();
-        groupMenu.menu();
+//        GroupMenu groupMenu = new GroupMenu();
+//        groupMenu.menu();
+
+        SolutionMenu solutionMenu = new SolutionMenu();
+        solutionMenu.menu();
 
 //        User user = new User();
 //        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);
