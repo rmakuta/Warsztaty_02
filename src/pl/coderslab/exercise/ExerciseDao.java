@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ExerciseDao {
     private static final String CREATE_EXERCISE_QUERY = "INSERT INTO exercise(title, description) VALUES (?, ?)";
     private static final String READ_EXERCISE_QUERY = "SELECT * FROM exercise where id = ?";
-    private static final String UPDATE_EXERCISE_QUERY = "UPDATE exercise SET title = ?, descriprion = ? where id = ?";
+    private static final String UPDATE_EXERCISE_QUERY = "UPDATE exercise SET title = ?, description = ? where id = ?";
     private static final String DELETE_EXERCISE_QUERY = "DELETE FROM exercise WHERE id = ?";
     private static final String FIND_ALL_EXERCISES_QUERY = "SELECT * FROM exercise";
 
@@ -34,6 +34,7 @@ public class ExerciseDao {
             PreparedStatement statement = conn.prepareStatement(READ_EXERCISE_QUERY);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
+            System.out.println("hello");
             if (resultSet.next()) {
                 Exercise exercise = new Exercise();
                 exercise.setId(resultSet.getInt("id"));

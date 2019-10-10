@@ -2,6 +2,7 @@ package pl.coderslab;
 
 import pl.coderslab.exercise.Exercise;
 import pl.coderslab.exercise.ExerciseDao;
+import pl.coderslab.exercise.ExerciseMenu;
 import pl.coderslab.group.Group;
 import pl.coderslab.group.GroupDao;
 import pl.coderslab.solution.Solution;
@@ -12,8 +13,12 @@ import pl.coderslab.user.UserMenu;
 
 public class Main {
     public static void main(String[] args) {
-        UserMenu userMenu = new UserMenu();
-        userMenu.menu();
+//        UserMenu userMenu = new UserMenu();
+//        userMenu.menu();
+
+        ExerciseMenu exerciseMenu = new ExerciseMenu();
+        exerciseMenu.menu();
+
 
 
 //        User user = new User();

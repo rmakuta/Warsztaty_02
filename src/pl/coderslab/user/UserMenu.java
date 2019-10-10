@@ -60,14 +60,19 @@ public class UserMenu {
         System.out.println("Podaj ID użytkownika do edycji: ");
         Scanner scanner = new Scanner(System.in);
         UserDao userDao = new UserDao();
+
         User user = userDao.read(scanner.nextInt());
         System.out.println("id: " + user.getId());
+
         System.out.println("name: " + user.getName() + ", po zmianie: ");
         user.setName(scanner.next());
+
         System.out.println("email: " + user.getEmail() + ", po zmianie: ");
         user.setEmail(scanner.next());
+
         System.out.println("password: " + user.getPassword() + ", po zmianie: ");
         user.setPassword(scanner.next());
+
         System.out.println("gropId: " + user.getGroupId() + ", po zmianie: ");
         user.setGroupId(scanner.nextInt());
         userDao.update(user);
