@@ -1,17 +1,17 @@
 package pl.coderslab;
 
-import pl.coderslab.exercise.Exercise;
-import pl.coderslab.exercise.ExerciseDao;
-import pl.coderslab.exercise.ExerciseMenu;
-import pl.coderslab.group.Group;
-import pl.coderslab.group.GroupDao;
-import pl.coderslab.group.GroupMenu;
-import pl.coderslab.solution.Solution;
-import pl.coderslab.solution.SolutionDao;
-import pl.coderslab.solution.SolutionMenu;
-import pl.coderslab.user.User;
-import pl.coderslab.user.UserDao;
-import pl.coderslab.user.UserMenu;
+//import pl.coderslab.exercise.Exercise;
+//import pl.coderslab.exercise.ExerciseDao;
+//import pl.coderslab.exercise.ExerciseMenu;
+//import pl.coderslab.group.Group;
+//import pl.coderslab.group.GroupDao;
+//import pl.coderslab.group.GroupMenu;
+//import pl.coderslab.solution.Solution;
+//import pl.coderslab.solution.SolutionDao;
+//import pl.coderslab.solution.SolutionMenu;
+//import pl.coderslab.user.User;
+//import pl.coderslab.user.UserDao;
+//import pl.coderslab.user.UserMenu;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,8 +24,12 @@ public class Main {
 //        GroupMenu groupMenu = new GroupMenu();
 //        groupMenu.menu();
 
-        SolutionMenu solutionMenu = new SolutionMenu();
-        solutionMenu.menu();
+//        SolutionMenu solutionMenu = new SolutionMenu();
+//        solutionMenu.menu();
+
+        System.out.println("Wybierz jedną z opcji: ");
+        System.out.println("add - dodawanie rozwiązania");
+        System.out.println("view - przeglądanie swoich rozwiązań");
 
 //        User user = new User();
 //        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);

@@ -12,6 +12,7 @@ public class Solution {
     private int usersId;
 
     public Solution() {
+        setCreated();
     }
 
     public Solution(String description, int exerciseId, int usersId) {
