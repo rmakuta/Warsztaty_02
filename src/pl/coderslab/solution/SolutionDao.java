@@ -1,6 +1,7 @@
 package pl.coderslab.solution;
 
 import pl.coderslab.DatabaseUtils;
+import pl.coderslab.solution.Solution;
 
 import java.sql.*;
 import java.util.Arrays;
@@ -45,8 +46,8 @@ public class SolutionDao {
                 solution.setCreated(resultSet.getString("created"));
                 solution.setUpadated(resultSet.getString("updated"));
                 solution.setDescription(resultSet.getString("description"));
-                solution.setExerciseId(resultSet.getInt("exerxciseId"));
-                solution.setUsersId(resultSet.getInt("exerxciseId"));
+                solution.setExerciseId(resultSet.getInt("exerciseid"));
+                solution.setUsersId(resultSet.getInt("usersid"));
                 return solution;
             }
         } catch (SQLException e) {
