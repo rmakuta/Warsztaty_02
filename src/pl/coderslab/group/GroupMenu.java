@@ -19,7 +19,7 @@ public class GroupMenu {
             System.out.println("add - dodanie grupy");
             System.out.println("edit - edycja grupy");
             System.out.println("delete - usunięcie grupy");
-            System.out.println("quit - zakończenie programu");
+            System.out.println("quit - wyjście");
 
             String option = scanner.next();
             option = option.toLowerCase();

@@ -18,7 +18,7 @@ public class SolutionMenu {
             System.out.println("Wybierz jedną z opcji: ");
             System.out.println("add - przypisanie zadania użytkownikowi");
             System.out.println("view - przegląd rozwiązań danego użytkownika");
-            System.out.println("quit - zakończenie programu");
+            System.out.println("quit - wyjście");
 
             String option = scanner.next();
             option = option.toLowerCase();

@@ -60,6 +60,7 @@ public class SolutionDao {
         try (Connection conn = DatabaseUtils.getConnection("java-warsztat-02")) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_SOLUTION_QUERY);
             statement.setString(1, solution.getCreated());
+            solution.setUpadated();
             statement.setString(2, solution.getUpadated());
             statement.setString(3, solution.getDescription());
             statement.setInt(4, solution.getExerciseId());

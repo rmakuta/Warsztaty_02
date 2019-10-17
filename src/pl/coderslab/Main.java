@@ -1,23 +1,16 @@
 package pl.coderslab;
 
+import pl.coderslab.exercise.ExerciseMenu;
+import pl.coderslab.group.GroupMenu;
 import pl.coderslab.solution.Solution;
 import pl.coderslab.solution.SolutionDao;
+import pl.coderslab.solution.SolutionMenu;
+import pl.coderslab.user.UserMenu;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        UserMenu userMenu = new UserMenu();
-//        userMenu.menu();
-
-//        ExerciseMenu exerciseMenu = new ExerciseMenu();
-//        exerciseMenu.menu();
-
-//        GroupMenu groupMenu = new GroupMenu();
-//        groupMenu.menu();
-
-//        SolutionMenu solutionMenu = new SolutionMenu();
-//        solutionMenu.menu();
         boolean isRightOption = true;
         Scanner scanner = new Scanner(System.in);
 
@@ -25,7 +18,11 @@ public class Main {
             System.out.println("Wybierz jedną z opcji: ");
             System.out.println("add - dodawanie rozwiązania");
             System.out.println("view - przeglądanie swoich rozwiązań");
-            System.out.println("quit - wyjście");
+            System.out.println("users - użytkownicy");
+            System.out.println("groups - gupy");
+            System.out.println("exercises - ćwiczenia");
+            System.out.println("solutions - rozwiązania");
+            System.out.println("quit - zakończenie programu");
 
             String option = scanner.next();
             option = option.toLowerCase();
@@ -34,49 +31,13 @@ public class Main {
             switch (option){
                 case "add": add(userId); break;
                 case "view": view(userId); break;
+                case "users": users(); break;
+                case "groups": groups(); break;
+                case "exercises": exercises(); break;
+                case "solutions": solutions(); break;
                 case "quit": isRightOption = false;
             }
         }
-
-//        User user = new User();
-//        User user1 = new User("Piotr", "piotr@fronczewski.pl", "123", 1);
-//        user.setName("Janek");
-//        user.setEmail("janek@baranek.pl");
-//        user.setPassword("132");
-//        user.setGroupId(1);
-
-//        UserDao userDao = new UserDao();
-//        userDao.create(user1);
-//        User[] users = userDao.findAllByGroupId(2);
-//        for (User u: users){
-//            System.out.println(u);
-//        }
-
-//        Group group = new Group("druga");
-
-//        GroupDao groupDao = new GroupDao();
-//        groupDao.create(group);
-
-//        Exercise exercise = new Exercise();
-//        exercise.setTitle("czwarte");
-
-//        ExerciseDao exerciseDao = new ExerciseDao();
-//        exerciseDao.create(exercise);
-
-//        Solution solution = new Solution();
-//        solution.setDescription("rozwiązanie pierwszego zadania");
-//        solution.setExerciseId(1);
-//        solution.setUsersId(3);
-//        solution.setCreated();
-//
-//        SolutionDao solutionDao = new SolutionDao();
-//        solutionDao.create(solution);
-//        Solution[] solutions = solutionDao.findAll();
-//        Solution[] solutions = solutionDao.findAllByUserId(1);
-//        Solution[] solutions = solutionDao.findAllByExerciseId(1);
-//        for (Solution s: solutions){
-//            System.out.println(s);
-//        }
     }
 
     public static void add(int userId){
@@ -91,12 +52,11 @@ public class Main {
         System.out.println("podaj iD zadania, do którego chcesz dodać rozwiązanie: ");
         Scanner scanner = new Scanner(System.in);
 
-        Solution solution = solutionDao.read(scanner.nextInt());
+        Solution[] solutions2 = solutionDao.findAllByExerciseId(scanner.nextInt());
         System.out.println("Podaj rozwiązanie: ");
         Scanner scanner1 = new Scanner(System.in);
-        String description = scanner.nextLine();
-        solution.setDescription(description);
-        solutionDao.update(solution);
+        solutions2[1].setDescription(scanner1.nextLine());
+        solutionDao.update(solutions2[1]);
     }
 
     public static void view(int userId){
@@ -108,4 +68,23 @@ public class Main {
         }
     }
 
+    public static void users(){
+        UserMenu userMenu = new UserMenu();
+        userMenu.menu();
+    }
+
+    public static void groups(){
+        GroupMenu groupMenu = new GroupMenu();
+        groupMenu.menu();
+    }
+
+    public static void exercises(){
+        ExerciseMenu exerciseMenu = new ExerciseMenu();
+        exerciseMenu.menu();
+    }
+
+    public static void solutions(){
+        SolutionMenu solutionMenu = new SolutionMenu();
+        solutionMenu.menu();
+    }
 }

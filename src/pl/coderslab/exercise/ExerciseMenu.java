@@ -19,7 +19,7 @@ public class ExerciseMenu {
             System.out.println("add - dodanie zadania");
             System.out.println("edit - edycja zadania");
             System.out.println("delete - usunięcie zadania");
-            System.out.println("quit - zakończenie programu");
+            System.out.println("quit - wyjście");
 
             String option = scanner.next();
             option = option.toLowerCase();

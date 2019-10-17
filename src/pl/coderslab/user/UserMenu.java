@@ -20,7 +20,7 @@ public class UserMenu {
             System.out.println("add - dodanie użytkownika");
             System.out.println("edit - edycja użytkownika");
             System.out.println("delete - usunięcie użytkownika");
-            System.out.println("quit - zakończenie programu");
+            System.out.println("quit - wyjście");
 
             String option = scanner.next();
             option = option.toLowerCase();
